@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Baloo_2, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { ConditionalHeader } from "@/components/layout/conditional-header";
+import { ConditionalFooter } from "@/components/layout/conditional-footer";
 import { SkyBackground } from "@/components/effects/sky-background";
 import { CartProvider } from "@/lib/cart-context";
 import { AuthProvider } from "@/lib/auth-context";
@@ -39,9 +39,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <FavoritesProvider>
             <CartProvider>
               <CheckoutProvider>
-                <Header />
+                <ConditionalHeader />
                 <main className="flex-1">{children}</main>
-                <Footer />
+                <ConditionalFooter />
               </CheckoutProvider>
             </CartProvider>
           </FavoritesProvider>

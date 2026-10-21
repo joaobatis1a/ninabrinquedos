@@ -9,6 +9,7 @@ import { z } from "zod";
 import { useAuth } from "@/lib/auth-context";
 import { Button } from "@/components/ui/button";
 import { GillyMascot } from "@/components/mascot/gilly-mascot";
+import { ChevronRightIcon } from "@/components/icons";
 
 const schema = z.object({
   email: z.string().email("E-mail inválido"),
@@ -40,6 +41,14 @@ export default function LoginPage() {
 
   return (
     <div className="mx-auto flex max-w-md flex-col items-center px-4 py-12 sm:px-6">
+      <Link
+        href="/"
+        className="squish mb-6 inline-flex items-center gap-1.5 self-start text-sm font-bold text-ink-soft transition-colors hover:text-gilly"
+      >
+        <ChevronRightIcon size={16} className="rotate-180" />
+        Voltar pra loja
+      </Link>
+
       <GillyMascot mood="wave" size={90} />
       <h1 className="mt-2 font-display text-2xl font-extrabold text-ink">Entrar</h1>
       <p className="mt-1 text-center text-ink-soft">Acesse sua conta Nina Brinquedos.</p>
